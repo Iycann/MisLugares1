@@ -1,4 +1,4 @@
-package com.example.mislugares;
+package com.example.mislugares.presentacion;
 
 
 import android.content.Intent;
@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mislugares.Aplicacion;
+import com.example.mislugares.R;
 import com.example.mislugares.casos_uso.CasosUsoActividades;
 import com.example.mislugares.casos_uso.CasosUsoLugar;
 import com.example.mislugares.datos.RepositorioLugares;
-import com.example.mislugares.presentacion.AcercaDeActivity;
 
 public class MisLugares extends AppCompatActivity {
     private RepositorioLugares lugares;
@@ -53,18 +55,20 @@ public class MisLugares extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
+        if (id == R.id.menu_buscar) {
+            lanzarVistaLugar(null);
+            return true;
+        }
+
         if (id == R.id.action_settings) {
             // Acción para Configuración (puedes agregar algo aquí)
             return true;
         }
         if (id == R.id.acercaDe) {
-            usoActividades.lanzarAcercaDe();
+            lanzarAcercaDe();
             return true;
         }
-        if (id == R.id.menu_buscar) {
-            lanzarVistaLugar(null);
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }

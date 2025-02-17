@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MisLugares"
-    android:id="@+id/main">
+    android:id="@+id/main"
+    tools:context=".presentacion.MisLugares">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"

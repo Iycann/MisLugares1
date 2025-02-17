@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools" >
 
     <application
+        android:name="Aplicacion"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +14,7 @@
         android:theme="@style/Theme.MisLugares"
         tools:targetApi="31" >
         <activity
-            android:name=".MisLugares"
+            android:name=".presentacion.MisLugares"
             android:exported="true"
             android:label="@string/title_activity_mis_lugares"
             android:theme="@style/Theme.MisLugares.NoActionBar" >
@@ -27,9 +28,8 @@
         <activity
             android:name=".presentacion.AcercaDeActivity"
             android:label="Acerca de ..."
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            ></activity>
-        <activity android:name=".presentacion.VistaLugarActivity"></activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name=".presentacion.VistaLugarActivity"/>
     </application>
 
 </manifest>
