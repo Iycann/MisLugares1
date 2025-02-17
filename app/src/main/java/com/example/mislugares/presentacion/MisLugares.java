@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -22,12 +23,18 @@ import com.example.mislugares.datos.RepositorioLugares;
 public class MisLugares extends AppCompatActivity {
     private RepositorioLugares lugares;
     private CasosUsoLugar usoLugar;
+
     private CasosUsoActividades usoActividades;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mis_lugares);
+        // Set content view using traditional method (no binding)
+
+        // Set toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar); // Replace with your toolbar ID
+        setSupportActionBar(toolbar);  // Esta línea ahora usará el método de AppCompatActivity
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
