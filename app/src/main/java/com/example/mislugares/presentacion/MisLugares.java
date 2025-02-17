@@ -1,7 +1,6 @@
 package com.example.mislugares.presentacion;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -85,8 +84,8 @@ public class MisLugares extends AppCompatActivity {
     }
 
     public void lanzarAcercaDe() {
-        Intent i = new Intent(this, AcercaDeActivity.class);
-        startActivity(i);
+        usoActividades.lanzarAcercaDe();
+
     }
 
     public void salir(View view) {

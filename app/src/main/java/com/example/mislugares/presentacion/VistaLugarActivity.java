@@ -1,6 +1,7 @@
 package com.example.mislugares.presentacion;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 public class VistaLugarActivity extends AppCompatActivity {
+
     private RepositorioLugares lugares;
     private CasosUsoLugar usoLugar;
     private int pos;
@@ -25,45 +27,62 @@ public class VistaLugarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.vista_lugar);
         Bundle extras = getIntent().getExtras();
+
         pos = extras.getInt("pos", 0);
         lugares = ((Aplicacion) getApplication()).lugares;
+
         usoLugar = new CasosUsoLugar(this, lugares);
         lugar = lugares.elemento(pos);
+
         actualizaVistas();
     }
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.vista_lugar, menu);
+        return true;
+    }*/
+   public void actualizaVistas() {
+       if (lugar == null) return; // Salir si el lugar es nulo
 
-    public void actualizaVistas() {
-        TextView nombre = findViewById(R.id.nombre);
-        nombre.setText(lugar.getNombre());
-        ImageView logo_tipo = findViewById(R.id.Logo_tipo);
-        logo_tipo.setImageResource(lugar.getTipo().getRecurso());
-        TextView tipo = findViewById(R.id.tipo);
-        tipo.setText(lugar.getTipo().getTexto());
-        TextView direccion = findViewById(R.id.direccion);
-        direccion.setText(lugar.getDireccion());
-        TextView telefono = findViewById(R.id.telefono);
-        telefono.setText(Integer.toString(lugar.getTelefono()));
-        TextView url = findViewById(R.id.url);
-        url.setText(lugar.getUrl());
-        TextView comentario = findViewById(R.id.comentario);
-        comentario.setText(lugar.getComentario());
-        TextView fecha = findViewById(R.id.fecha);
-        fecha.setText(DateFormat.getDateInstance().format(
-                new Date(lugar.getFecha())));
-        TextView hora = findViewById(R.id.hora);
-        hora.setText(DateFormat.getTimeInstance().format(
-                new Date(lugar.getFecha())));
-        RatingBar valoracion = findViewById(R.id.valoracion);
-        valoracion.setRating(lugar.getValoracion());
-        valoracion.setOnRatingBarChangeListener(
-                new RatingBar.OnRatingBarChangeListener() {
-                    @Override
-                    public void onRatingChanged(RatingBar ratingBar,
-                                                float valor, boolean fromUser) {
-                        lugar.setValoracion(valor);
-                    }
-                });
+       TextView nombre = findViewById(R.id.nombre);
+       if (nombre != null) nombre.setText(lugar.getNombre());
+
+       ImageView logo_tipo = findViewById(R.id.logo_tipo);
+       if (logo_tipo != null) logo_tipo.setImageResource(lugar.getTipo().getRecurso());
+
+       TextView tipo = findViewById(R.id.tipo);
+       if (tipo != null) tipo.setText(lugar.getTipo().getTexto());
+
+       TextView direccion = findViewById(R.id.direccion);
+       if (direccion != null) direccion.setText(lugar.getDireccion());
+
+       TextView telefono = findViewById(R.id.telefono);
+       if (telefono != null) telefono.setText(Integer.toString(lugar.getTelefono()));
+
+       TextView url = findViewById(R.id.url);
+       if (url != null) url.setText(lugar.getUrl());
+
+       TextView comentario = findViewById(R.id.comentario);
+       if (comentario != null) comentario.setText(lugar.getComentario());
+
+       TextView fecha = findViewById(R.id.fecha);
+       if (fecha != null) fecha.setText(DateFormat.getDateInstance().format(new Date(lugar.getFecha())));
+
+       TextView hora = findViewById(R.id.hora);
+       if (hora != null) hora.setText(DateFormat.getTimeInstance().format(new Date(lugar.getFecha())));
+
+       RatingBar valoracion = findViewById(R.id.valoracion);
+       if (valoracion != null) {
+           valoracion.setRating(lugar.getValoracion());
+           valoracion.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+               @Override
+               public void onRatingChanged(RatingBar ratingBar, float valor, boolean fromUser) {
+                   lugar.setValoracion(valor);
+               }
+           });
+       }
     }
 }
