@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.mislugares.casos_uso.CasosUsoActividades;
 import com.example.mislugares.casos_uso.CasosUsoLugar;
 import com.example.mislugares.datos.RepositorioLugares;
-import com.example.mislugares.presentacion.Aplicacion;
+import com.example.mislugares.presentacion.AcercaDeActivity;
 
 public class MisLugares extends AppCompatActivity {
     private RepositorioLugares lugares;

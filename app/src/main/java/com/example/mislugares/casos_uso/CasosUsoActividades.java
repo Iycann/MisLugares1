@@ -2,7 +2,7 @@ package com.example.mislugares.casos_uso;
 
 import android.content.Context;
 import android.content.Intent;
-import com.example.mislugares.AcercaDeActivity;
+import com.example.mislugares.presentacion.AcercaDeActivity;
 
 public class CasosUsoActividades {
     private Context contexto;

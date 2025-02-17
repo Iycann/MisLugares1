@@ -1,4 +1,4 @@
-package com.example.mislugares.presentacion;
+package com.example.mislugares;
 
 import android.app.Application;
 

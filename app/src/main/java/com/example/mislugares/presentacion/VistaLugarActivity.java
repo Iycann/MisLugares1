@@ -1,4 +1,4 @@
-package com.example.mislugares;
+package com.example.mislugares.presentacion;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -7,10 +7,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mislugares.Aplicacion;
+import com.example.mislugares.R;
 import com.example.mislugares.casos_uso.CasosUsoLugar;
 import com.example.mislugares.datos.RepositorioLugares;
 import com.example.mislugares.modelo.Lugar;
-import com.example.mislugares.presentacion.Aplicacion;
 
 import java.text.DateFormat;
 import java.util.Date;
